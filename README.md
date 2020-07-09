@@ -5,9 +5,9 @@
 SpringBoot、thymeleaf、MySQL
 
 ## 开发环境
-1，	JRE11
-2，	Tomcat7
-3，	Windows10
-4，	Chrome
-5，	MySQL8
+JRE11、
+Tomcat7、
+Windows10、
+Chrome、
+MySQL8
 
