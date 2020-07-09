@@ -1,0 +1,45 @@
+body{
+    background:url(../image/hello.jpg) 0px 0px;
+    font-size: 62.5%;
+}
+
+p.welcome{
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 10%;
+    text-align: center;
+
+    font-family: SansSerif;
+    font-size: 3em;
+    color: royalblue;
+}
+
+div.option{
+    display: block;
+    position: fixed;
+    width: 60%;
+    height: 60%;
+    top:20%;
+    left: 20%;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+li{
+    display: block;
+    padding:3em 4em;
+}
+
+li a{
+    text-decoration: none;
+    color: cornflowerblue;
+    font-family: SansSerif;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+li a:hover{
+    color: white;
+}

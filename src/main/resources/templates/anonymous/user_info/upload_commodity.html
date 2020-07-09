@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>upload commodity</title>
+    <link type="text/css" rel="stylesheet" href="../../css/upload_commodity.css" />
+    <link type="text/css" rel="stylesheet" href="../../../static/css/upload_commodity.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/sidebar.css"/>
+    <link rel="stylesheet" href="../../../static/css/sidebar.css" />
+</head>
+<body>
+
+<header>
+    <a class="backprev" href="javascript:history.back();">
+        <i class="mdui-icon material-icons">返回上一页</i>
+    </a>
+    <div class="head-middle">列表页</div>
+    <div class="head-right">
+        <button class="mdui-btn app-btn" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">导航</i></button>
+        <div class="mdui-drawer mdui-drawer-right mdui-drawer-close" id="left-drawer">
+
+            <ul class="mdui-list app-slide-menu app-collapse-menu" mdui-collapse="{accordion: true}">
+                <li class="mdui-list-item mdui-ripple app-list-home ">
+                    <a th:href="@{/GoSearch}" class="app-list-item-link mdui-text-left ">
+                        <div class="mdui-list-item-content">
+                            搜索
+                        </div>
+                    </a>
+                </li>
+                <li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+                    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+                        <div class="mdui-list-item mdui-list-item-content mdui-text-left" onClick="">
+                            个人主页
+                        </div>
+                    </div>
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoPurchase_History}" class="app-list-item-link mdui-text-left">
+                                购买记录
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoShopping_Cart}" class="app-list-item-link mdui-text-left">
+                                购物车
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoPending_Order}" class="app-list-item-link mdui-text-left">
+                                待确定订单
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoPersonal_Information}" class="app-list-item-link mdui-text-left">
+                                个人信息
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoUpload_Commodity}" class="app-list-item-link mdui-text-left">
+                                上传商品
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</header>
+
+<div>
+    <div class="main_r_up">
+        <div class="pp">上传商品</div>
+    </div>
+    <form method="post" enctype="multipart/form-data" action="/upload_commodity">
+        <div class="txt txt0">
+            <span class="visible"  style="letter-spacing:8px;">商品名:</span>
+            <input name="commodity_name" type="text" class="txtphone" placeholder="请输入商品名，必填"/>
+            <span class="error" th:text="${commodity_error}"></span>
+        </div>
+        <div class="txt txt0">
+            <span class="visible" style="letter-spacing:11px;">价 格:</span>
+            <input name="price" type="text" class="txtphone" placeholder="请输入价格，必填"/>
+            <span class="error" th:text="${price_error}"></span>
+        </div>
+        <div class="txt txt0">
+            <span class="visible" style="letter-spacing:4px;">商品介绍:</span>
+            <input name="introduction" type="text" class="txtphone" placeholder="请输入商品介绍，必填"/>
+            <span class="error" th:text="${introduction_error}"></span>
+        </div>
+        <div class="txt txt0">
+            <span class="visible" style="letter-spacing:4px;">数 量:</span>
+            <input name="exist_number" type="text" class="txtphone" placeholder="请输入数量，必填"/>
+            <span class="error" th:text="${number_error}"></span>
+        </div>
+        <div class="txt txt0" style="display: inline-block">
+            <span class="visible" style="letter-spacing:11px;">图 片:</span>
+            <input style="color: grey; background-color: white" name="picture" type="file" class="txtphone"/>
+            <span class="error" th:text="${picture_error}"></span>
+        </div>
+        <div class="txt txt0">
+            <span class="visible" style="letter-spacing:4px;">备 注:</span>
+            <input name="remarks" type="text" class="txtphone" placeholder="请输入备注信息，选填"/>
+        </div>
+        <div class="txt txt0">
+            <div class="txt1">
+                <!--<a th:href="@{/register}"><div class="zhucebtn">确认注册</div></a>-->
+                <input type="submit" class="zhucebtn" value="确认上传">
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="result">
+    <p th:style="'display:'+@{(${visible7} ? 'none' : '')}" align="center">上传商品成功！</p>
+</div>
+
+<script src="../../js/mdui.js"></script>
+<script src="../../../static/js/mdui.js"></script>
+</body>
+</html>

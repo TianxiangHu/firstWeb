@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <!--<link rel="stylesheet" type="text/css" href="../../static/css/index.css"/>-->
+    <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+</head>
+<body>
+    <p class="welcome">
+        你好，<span th:text="${name}"><br>
+        请选择下一步操作</span>
+    </p>
+
+<div class="option">
+    <ul>
+        <li><a th:href="@{/GoUser_info}">个人主页</a></li>
+        <li><a th:href="@{/GoSearch}">商品搜索</a></li>
+    </ul>
+</div>
+
+
+</body>
+</html>

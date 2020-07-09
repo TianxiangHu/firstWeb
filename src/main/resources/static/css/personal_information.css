@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0}
+body{ font-family:"微软雅黑"; width:100%; min-width:1200px; overflow:hidden}
+a{ text-decoration:none}
+
+body{
+    background:url(../image/hello.jpg) 0px 0px;
+    font-size: 62.5%;
+}
+
+main{
+    display: block;
+    width: 100%;
+}
+
+div.table1{
+    display: inline-block;
+    width: 40%;
+    margin: 0px 0 0px 70px;
+    color: blue;
+    font-size:20px;
+}
+
+div.t1{
+    margin: 20px 0;
+}
+
+span{
+    padding-left: 20px;
+    color: brown;
+}
+
+div.img1{
+    height: 240px;
+    width: 220px;
+}
+
+img{
+    margin: 20px 20px;
+    height: 180px;
+    width: 180px;
+}
+
+div.table2{
+    display: inline-block;
+    width: 40%;
+    margin: 0px 0 0px 70px;
+    color: blue;
+    font-size: 20px;
+}
+
+div.t2{
+    display: block;
+    margin: 20px 0;
+}
+
+.t2 input{
+    height:35px;
+    width: 280px;
+    border:1px solid white;
+    margin: 7px 0 7px 0;
+    font-size: 15px;
+    color: grey;
+}
+
+input.submit{
+    height: 40px;
+    width: 170px;
+    margin-left: 40px;
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+input.submit:hover{
+    background-color: blue;
+}
+
+a{
+    cursor: pointer;
+}

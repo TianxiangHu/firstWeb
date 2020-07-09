@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>purchase history</title>
+    <!---->
+    <!---->
+    <link rel="stylesheet" type="text/css" href="../../css/purchase_history.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/sidebar.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../static/css/purchase_history.css"/>
+    <link rel="stylesheet" href="../../../static/css/sidebar.css" />
+
+</head>
+<body>
+
+<header>
+    <a class="backprev" href="javascript:history.back();">
+        <i class="mdui-icon material-icons">返回上一页</i>
+    </a>
+    <div class="head-middle">列表页</div>
+    <div class="head-right">
+        <button class="mdui-btn app-btn" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">导航</i></button>
+        <div class="mdui-drawer mdui-drawer-right mdui-drawer-close" id="left-drawer">
+
+            <ul class="mdui-list app-slide-menu app-collapse-menu" mdui-collapse="{accordion: true}">
+                <li class="mdui-list-item mdui-ripple app-list-home ">
+                    <a th:href="@{/GoSearch}" class="app-list-item-link mdui-text-left ">
+                        <div class="mdui-list-item-content">
+                            搜索
+                        </div>
+                    </a>
+                </li>
+                <li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+                    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+                        <div class="mdui-list-item mdui-list-item-content mdui-text-left" onClick="">
+                            个人主页
+                        </div>
+                    </div>
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoPurchase_History}" class="app-list-item-link mdui-text-left">
+                                购买记录
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoShopping_Cart}" class="app-list-item-link mdui-text-left">
+                                购物车
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoPending_Order}" class="app-list-item-link mdui-text-left">
+                                待确定订单
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoPersonal_Information}" class="app-list-item-link mdui-text-left">
+                                个人信息
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoUpload_Commodity}" class="app-list-item-link mdui-text-left">
+                                上传商品
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</header>
+
+<div class="show_content" id="show">
+    <div class="show_list" th:style="'display:'+@{(${visible5} ? 'none' : ' ')}">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr th:style="'display:'+@{(${visible5} ? 'none' : ' ')}">
+                <td height="40" align="center" valign="middle" class="title_bg">商品名</td>
+                <td height="40" align="center" valign="middle" class="title_bg">图片</td>
+                <td height="40" align="center" valign="middle" class="title_bg">卖家</td>
+                <td height="40" align="center" valign="middle" class="title_bg">购买时间</td>
+                <td height="40" align="center" valign="middle" class="title_bg">购买数量</td>
+                <td height="40" align="center" valign="middle" class="title_bg">总价格</td>
+                <td height="40" align="center" valign="middle" class="title_bg">介绍</td>
+            </tr>
+
+            <tr th:style="'display:'+@{(${visible0} ? 'none' : ' ')}">
+                <td height="80" align="center"><span th:text="${name0}"></span></td>
+                <td height="80" align="center"><a th:href="${image_adr0}" target="_blank"><img th:src="${image_adr0}" width="50px" height="70px" border="0" /></a> </td>
+                <td height="80" align="center"><span th:text="${seller0}"></span></td>
+                <td height="80" align="center"><span th:text="${time0}"></span></td>
+                <td height="80" align="center"><span th:text="${number0}"></span></td>
+                <td height="80" align="center"><span th:text="${price0}"></span></td>
+                <td height="80" align="center"><span th:text="${introduction0}"></span></td>
+            </tr>
+
+            <tr th:style="'display:'+@{(${visible1} ? 'none' : ' ')}">
+                <td height="80" align="center"><span th:text="${name1}"></span></td>
+                <td height="80" align="center"><a th:href="${image_adr1}" target="_blank"><img th:src="${image_adr1}" width="50px" height="70px" border="0" /></a> </td>
+                <td height="80" align="center"><span th:text="${seller1}"></span></td>
+                <td height="80" align="center"><span th:text="${time1}"></span></td>
+                <td height="80" align="center"><span th:text="${number1}"></span></td>
+                <td height="80" align="center"><span th:text="${price1}"></span></td>
+                <td height="80" align="center"><span th:text="${introduction1}"></span></td>
+            </tr>
+
+            <tr th:style="'display:'+@{(${visible2} ? 'none' : ' ')}">
+                <td height="80" align="center"><span th:text="${name2}"></span></td>
+                <td height="80" align="center"><a th:href="${image_adr2}" target="_blank"><img th:src="${image_adr2}" width="50px" height="70px" border="0" /></a> </td>
+                <td height="80" align="center"><span th:text="${seller2}"></span></td>
+                <td height="80" align="center"><span th:text="${time2}"></span></td>
+                <td height="80" align="center"><span th:text="${number2}"></span></td>
+                <td height="80" align="center"><span th:text="${price2}"></span></td>
+                <td height="80" align="center"><span th:text="${introduction2}"></span></td>
+            </tr>
+
+            <tr th:style="'display:'+@{(${visible3} ? 'none' : ' ')}">
+                <td height="80" align="center"><span th:text="${name3}"></span></td>
+                <td height="80" align="center"><a th:href="${image_adr3}" target="_blank"><img th:src="${image_adr3}" width="50px" height="70px" border="0" /></a> </td>
+                <td height="80" align="center"><span th:text="${seller3}"></span></td>
+                <td height="80" align="center"><span th:text="${time3}"></span></td>
+                <td height="80" align="center"><span th:text="${number3}"></span></td>
+                <td height="80" align="center"><span th:text="${price3}"></span></td>
+                <td height="80" align="center"><span th:text="${introduction3}"></span></td>
+            </tr>
+
+            <tr th:style="'display:'+@{(${visible4} ? 'none' : ' ')}">
+                <td height="80" align="center"><span th:text="${name4}"></span></td>
+                <td height="80" align="center"><a th:href="${image_adr4}" target="_blank"><img th:src="${image_adr4}" width="50px" height="70px" border="0" /></a> </td>
+                <td height="80" align="center"><span th:text="${seller4}"></span></td>
+                <td height="80" align="center"><span th:text="${time4}"></span></td>
+                <td height="80" align="center"><span th:text="${number4}"></span></td>
+                <td height="80" align="center"><span th:text="${price4}"></span></td>
+                <td height="80" align="center"><span th:text="${introduction4}"></span></td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div class="turnPage">
+    <p th:style="'display:'+@{(${visible6} ? 'none' : '')}" class="PageUD" align="center"><a class="PageUD" th:href="@{/anonymous/user_info/ph_TurnUp}">上一页</a></p>
+    <p th:style="'display:'+@{(${visible7} ? 'none' : '')}" class="PageUD" align="center"><a class="PageUD" th:href="@{/anonymous/user_info/ph_TurnDown}">下一页</a> </p>
+</div>
+
+<script src="../../js/mdui.js"></script>
+<script src="../../../static/js/mdui.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <!--<link type="text/css" rel="stylesheet" href="../static/css/register.css" />-->
+    <link type="text/css" rel="stylesheet" href="css/register.css" />
+</head>
+<body>
+
+<div>
+    <div class="main_r_up">
+        <div class="pp">注册</div>
+    </div>
+    <form method="post" action="Register">
+        <div class="txt txt0">
+            <span class="visible"  style="letter-spacing:8px;">用户名:</span>
+            <input name="name" type="text" class="txtphone" required="" placeholder="请输入用户名，必填"/>
+            <span class="error" th:text="${name_error}"></span>
+        </div>
+        <div class="txt txt0">
+            <span class="visible" style="letter-spacing:11px;">昵 称:</span>
+            <input name="user_name" type="text" class="txtphone" required="" placeholder="请输入昵称，必填"/>
+            <span class="error" th:text="${user_name_error}"></span>
+        </div>
+        <div class="txt txt0">
+            <span class="visible" style="letter-spacing:4px;">登录密码:</span>
+            <input name="password" type="text" class="txtphone" required="" placeholder="请输入密码，必填"/>
+            <span class="error" th:text="${password_error}"></span>
+        </div>
+        <div class="txt txt0">
+            <span class="visible" style="letter-spacing:4px;">重复密码:</span>
+            <input name="repeat password" type="text" class="txtphone"  required="" placeholder="请再次输入密码，必填"/>
+            <span class="error" th:text="${repeat_password_error}"></span>
+        </div>
+        <div class="txt txt0">
+            <span class="visible" style="letter-spacing:11px;">邮 箱:</span>
+            <input name="email" type="text" class="txtphone" required="" placeholder="请输入邮箱，必填"/>
+            <span class="error" th:text="${email_error}"></span>
+        </div>
+        <div class="txt txt0">
+            <span class="visible" style="letter-spacing:4px;">联系方式:</span>
+            <input name="contact" type="text" class="txtphone" placeholder="请输入其他联系方式，选填"/>
+        </div>
+        <div class="txt txt0">
+            <div class="txt1">
+                <!--<a th:href="@{/register}"><div class="zhucebtn">确认注册</div></a>-->
+                <input type="submit" class="zhucebtn" value="确认注册">
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

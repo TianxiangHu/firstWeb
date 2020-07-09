@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>user_info</title>
+    <!---->
+    <link rel="stylesheet" type="text/css" href="../../static/css/user_info.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/user_info.css"/>
+</head>
+<body>
+
+<p class="welcome">
+    请选择下一步操作
+</p>
+
+<div class="option">
+    <ul>
+        <li><a th:href="@{/GoPurchase_History}">购买记录</a></li>
+        <li><a th:href="@{/GoShopping_Cart}">购物车</a></li>
+        <li><a th:href="@{/GoPending_Order}">待确定订单</a></li>
+        <li><a th:href="@{/GoPersonal_Information}">个人信息</a></li>
+        <li><a th:href="@{/GoUpload_Commodity}">上传商品</a> </li>
+        <li><a th:href="@{/GoSearch}">搜索</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

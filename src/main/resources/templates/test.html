@@ -1,0 +1,25 @@
+<!--用来测试弹出对话框功能-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>function test</title>
+    <script>
+        function test() {
+            var updateResult=document.getElementById("updateResult").title;
+            if(updateResult=="已经成功完成测试！"){
+                alert("测试成功");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div>
+    <form action="/test/upload" method="post">
+        <input id="updateResult" type="submit" name="test submit" th:title="${updateResult}" value="提交测试" onclick="test()">
+    </form>
+</div>
+</body>
+</html>

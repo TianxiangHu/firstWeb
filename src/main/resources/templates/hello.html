@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" type="text/css" href="css/hello.css"/>
+</head>
+<body>
+<div class="main">
+    <h1>
+        欢迎登录<br>匿名购物网站
+    </h1>
+    <form method="post">
+        <input type="text" name="name" value="用户名" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '用户名';}"
+               required="">
+        <input type="password" name="password" value="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}"
+               required="">
+        <input type="submit" value="登录">
+    </form>
+    <div class="register">
+        <a th:href="@{/GoRegister}">注册</a>
+    </div>
+</div>
+</body>
+</html>

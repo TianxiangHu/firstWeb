@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0}
+body{ font-family:"微软雅黑"; width:100%; min-width:1200px; overflow:hidden}
+ul li{ list-style:none}
+.blue{ color:#31acfb}
+a{ text-decoration:none}
+
+
+body{
+    background:url(../image/hello.jpg) 0px 0px;
+    font-size: 62.5%;
+}
+
+.main0{
+    position: fixed;
+    margin-left: 35%;
+}
+.main_right{
+    width:45.6em;
+    height:38.6em;
+    padding-right:3.6em;
+}
+.main_r_up{
+    height:7.4em;
+    padding-top:2em;
+}
+.main_r_up .pp{
+    height:7.4em;
+    line-height:7.4em;
+    font-size:1.8em;
+    color:blue;
+    padding-left:2em;
+    letter-spacing:0.9em;
+}
+.txt{
+    width:456px;
+    height:40px;
+    margin-top:35px
+}
+.txt span.visible{
+    display: inline-block;
+    text-align: center;
+    width:8em;
+    font-size:18px;
+    color:blue;
+    height:40px;
+    line-height:40px;
+}
+
+.txt span.error{
+    font-size: 14px;
+    color: darkred;
+    display: block;
+    margin-left: 20px;
+}
+
+.txt input{
+    height:40px;
+    border:1px solid #ccc;
+    padding-left:20px;
+    margin-left:20px
+}
+.txt input.txtphone{
+    width:240px;
+}
+
+.txt0{
+    margin-top:30px
+}
+.zhucebtn{
+    width:260px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    color:#fff;
+    background:cornflowerblue;
+    font-size:14px;
+    border-radius:5px;
+    margin-left:15%;
+    cursor:pointer
+}
+
+.zhucebtn:hover{
+    background-color: darkblue;
+}
+
+.txt1{
+    margin-left: 80px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>purchase confirm</title>
+    <!---->
+    <!---->
+    <link rel="stylesheet" type="text/css" href="../../css/purchase_confirm.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/sidebar.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../static/css/purchase_confirm.css"/>
+    <link rel="stylesheet" href="../../../static/css/sidebar.css" />
+</head>
+<body>
+
+<header>
+    <a class="backprev" href="javascript:history.back();">
+        <i class="mdui-icon material-icons">返回上一页</i>
+    </a>
+    <div class="head-middle">列表页</div>
+    <div class="head-right">
+        <button class="mdui-btn app-btn" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">导航</i></button>
+        <div class="mdui-drawer mdui-drawer-right mdui-drawer-close" id="left-drawer">
+
+            <ul class="mdui-list app-slide-menu app-collapse-menu" mdui-collapse="{accordion: true}">
+                <li class="mdui-list-item mdui-ripple app-list-home ">
+                    <a th:href="@{/GoSearch}" class="app-list-item-link mdui-text-left ">
+                        <div class="mdui-list-item-content">
+                            搜索
+                        </div>
+                    </a>
+                </li>
+                <li class="mdui-collapse-item  app-hide-list  app-collapse-list">
+                    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple  mdui-p-x-0">
+                        <div class="mdui-list-item mdui-list-item-content mdui-text-left" onClick="">
+                            个人主页
+                        </div>
+                    </div>
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoPurchase_History}" class="app-list-item-link mdui-text-left">
+                                购买记录
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoShopping_Cart}" class="app-list-item-link mdui-text-left">
+                                购物车
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoPending_Order}" class="app-list-item-link mdui-text-left">
+                                待确定订单
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoPersonal_Information}" class="app-list-item-link mdui-text-left">
+                                个人信息
+                            </a>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple app-sub-list  app-hide-list">
+                            <a th:href="@{/GoUpload_Commodity}" class="app-list-item-link mdui-text-left">
+                                上传商品
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</header>
+
+<div class="user_and_adr">
+    <p>账户名：<span th:text="${name}"></span></p>
+    <div class="adr">
+        <p>地址为：<span th:text="${adr}"></span></p>
+        <button th:style="'display:'+@{(${visible1} ? 'none' : '')}" th:href="@{/anonymous/user_info/previous}" value="上一个地址">上一个地址</button>
+        <button th:style="'display:'+@{(${visible2} ? 'none' : '')}" th:href="@{/anonymous/user_info/next}" value="下一个地址">下一个地址</button>
+    </div>
+</div>
+
+<div class="commodity">
+    <table>
+        <tr class="title-top">
+            <td height="60" align="center" valign="middle" class="title_bg">商品名</td>
+            <td height="60" align="center" valign="middle" class="title_bg">图片</td>
+            <td height="60" align="center" valign="middle" class="title_bg">卖家</td>
+            <td height="60" align="center" valign="middle" class="title_bg">购买数量</td>
+            <td height="60" align="center" valign="middle" class="title_bg">总价格</td>
+            <td height="60" align="center" valign="middle" class="title_bg">介绍</td>
+        </tr>
+        <tr>
+            <td height="80" align="center"><span th:text="${commodity_name}"></span></td>
+            <td height="80" align="center"><a th:href="${image_adr}" target="_blank"><img th:src="${image_adr}" width="50px" height="70px" border="0" /></a> </td>
+            <td height="80" align="center"><span th:text="${commodity_seller}"></span></td>
+            <td height="80" align="center"><span th:text="${commodity_number}"></span></td>
+            <td height="80" align="center"><span th:text="${commodity_price}"></span></td>
+            <td height="80" align="center"><span th:text="${commodity_introduction}"></span></td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <a class="pay" th:href="@{/anonymous/user_info/pay_it}" value="点击这里付款">点击这里付款</a>
+</div>
+
+<script src="../../js/mdui.js"></script>
+<script src="../../../static/js/mdui.js"></script>
+</body>
+</html>

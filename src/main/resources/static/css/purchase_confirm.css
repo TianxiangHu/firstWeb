@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+    margin:0;
+    list-style:none;
+    padding:0;
+}
+body {
+    font-family: "Microsoft Yahei";
+    background-image: url(../image/hello.jpg);
+}
+
+div.user_and_adr{
+    margin: 50px 0px;
+    display: block;
+    color: brown;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+p{
+    padding: 20px 0 20px 0;
+}
+
+button{
+    width: 90px;
+    height: 50px;
+    font-size: 16px;
+    color: brown;
+    cursor: pointer;
+}
+
+table{
+    color: brown;
+    width:70%;
+    margin-left: 20%;
+    font-size: 20px;
+}
+
+tr{
+    font-size: 20px;
+    border:2px solid green;
+}
+
+td{
+    font-size: 20px;
+    border:2px solid green;
+}
+
+a.pay{
+    display: block;
+    margin-top: 70px;
+    margin-left: 37%;
+    margin-right: 37%;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    background: white;
+    border: 5px solid red;
+    color: brown;
+    cursor: pointer;
+}
+
